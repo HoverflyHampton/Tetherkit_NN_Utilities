@@ -1,4 +1,3 @@
-from log_parser.DFParser import DFLog
 import numpy as np
 import pandas as pd
 import pathlib
@@ -30,7 +29,7 @@ def make_dataset_from_folder(folder_name, logging):
     return end_df
 
 def serialize_dataframe(df: pd.DataFrame, output_file):
-    df.to_csv(output_file)
+    df.to_csv(output_file, index=False)
 
 def find_launch_index(df: pd.DataFrame, cutoff = 5000):
     return df.where(df['pow_motorCurrentTotal'].gt(cutoff)).first_valid_index()
@@ -90,7 +89,7 @@ def make_clean_dataframe(df: pd.DataFrame, motor_cutoff: int, data_collection_id
                             'rtk_x_m',
                             'rtk_y_m'], axis=1)
     # Training Features
-    clean_data.rename({'alt_tetherPosition':'Tether_Length',
+    clean_data = clean_data.rename(columns={'alt_tetherPosition':'Tether_Length',
                         'wnd_windSpeed':'Wind_Speed',
                         'wnd_windBearing':'Wind_Direction',
                         'cft_craftHeading':'Craft_Direction',
@@ -111,7 +110,7 @@ def make_clean_dataframe(df: pd.DataFrame, motor_cutoff: int, data_collection_id
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="Hoverfly GPS Denied Data Parser",
+        prog="nn_file_merge.py",
         description="A program to create training data for the gps denied neural network using bgu log file csvs",
         epilog='Use -h to view help'
     )
