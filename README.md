@@ -1,6 +1,11 @@
 # Tetherkit Neural Network Utilities
 A collection of scripts and snippets to help with the alternate navigation neural network
 
+## Neural Network
+### Alt Nav NN
+[![Run in Colab](https://img.shields.io/badge/Google%20Colab-Run%20the%20code-green?style=plastic&logo=google)](https://colab.research.google.com/github/HoverflyHampton/Tetherkit_NN_Utilities/blob/master/Simple%20Alt%20Nav%20NN.ipynb)
+A simple tensorflow network to predict position of the craft given flight characteristics. 
+
 ## Scripts
 ### nn_file_merge.py
 [![Run in Colab](https://img.shields.io/badge/Google%20Colab-Run%20the%20code-green?style=plastic&logo=google)](https://colab.research.google.com/github/HoverflyHampton/Tetherkit_NN_Utilities/blob/master/Dataset%20Creator.ipynb#scrollTo=80fba116-6099-4737-814a-e2afe6bb57e1)
